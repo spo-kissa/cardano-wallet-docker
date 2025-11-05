@@ -1,0 +1,6 @@
+services:
+  address:
+    build:
+      context: .
+    volumes:
+      - ./share:/root/share
