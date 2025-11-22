@@ -35,8 +35,7 @@ set -eux
 
 		apt-get install -y git build-essential curl libffi-dev libffi8 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 pkg-config zlib1g-dev libgmp-dev
 
-		mkdir ~/git
-		cd ~/git
+		mkdir -p $HOME/git && cd $HOME/git
 		git clone https://github.com/IntersectMBO/cardano-addresses.git
 		cd cardano-addresses
 
@@ -80,6 +79,5 @@ RUN chmod +755 /usr/local/bin/create.sh
 
 USER root
 WORKDIR /root
-
 
 ENTRYPOINT ["tail", "-F", "/dev/null"]
